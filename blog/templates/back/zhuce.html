@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>后台登录</title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="/static/back/css/style.css" />
+<style>
+body{height:100%;background:#16a085;overflow:hidden;}
+canvas{z-index:-1;position:absolute;}
+</style>
+    <script src="/static/back/js/jquery.js"></script>
+    <script src="/static/back/js/verificationNumbers.js"></script>
+    <script src="/static/back/js/Particleground.js"></script>
+<script>
+$(document).ready(function() {
+  //粒子背景特效
+  $('body').particleground({
+    dotColor: '#5cbdaa',
+    lineColor: '#5cbdaa'
+  });
+  //验证码
+  createCode();
+  //测试提交，对接程序删除即可
+  $(".submit_btn").click(function(){
+	  location.href="index.html";
+	  });
+});
+</script>
+</head>
+<body>
+    <form action="" method="post">
+        <dl class="admin_login">
+         <dt>
+          <strong>博客后台注册</strong>
+          <em>就算此时没有风景，你要相信前面一定会有</em>
+         </dt>
+            {{ cw }}
+             <form action="" method="post">
+                 <dd class="user_icon">
+                  <input type="text" name='nameuser' placeholder="账号" class="login_txtbx"/>
+                 </dd>
+                 <dd class="pwd_icon">
+                  <input type="password" name='password' placeholder="密码" class="login_txtbx"/>
+                 </dd>
+
+                 <dd class="pwd_icon">
+                  <input type="password" name='password2' placeholder="密码" class="login_txtbx"/>
+                 </dd>
+                 <dd>
+                  <input type="submit" value="立即注册" class="submit_btn"/>
+                 </dd>
+             </form>
+         <dd>
+          <p>生命始于足下，风景尽在眼前</p>
+         </dd>
+        </dl>
+    </form>
+</body>
+</html>

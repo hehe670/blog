@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小爱即安</title>
+<meta name="keywords" content="" />
+<meta name="description" content="如影随形主题的个人博客模板，神秘、俏皮。" />
+<link href="/static/web/css/base.css" rel="stylesheet">
+<link href="/static/web/css/index.css" rel="stylesheet">
+<link href="/static/web/css/about.css" rel="stylesheet">
+<link href="/static/web/css/media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if lt IE 9]>
+<script src="/static/web/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="ibody">
+  <header>
+    <h1>小爱即安</h1>
+    <h2>生命在于爱，如果大爱是视苍生如一，没那容下万事的心，我只要小爱即可。</h2>
+    <div class="logo"><a href="{{ url_for('web.index') }}"></a></div>
+    <nav id="topnav"><a href="{{ url_for('web.index') }}">首页</a><a href="{{ url_for('web.about') }}">随想</a></nav>
+  </header>
+  <article>
+    <div class="banner">
+      <ul class="texts">
+        <p>The best life is use of willing attitude, a happy-go-lucky life. </p>
+        <p>最好的生活是用心甘情愿的态度，过随遇而安的生活。</p>
+      </ul>
+    </div>
+    <div class="bloglist">
+      <h2>
+        <p><span>博客</span>小屋</p>
+      </h2>
+          <h3 class="about_h"><a href="{{ url_for('web.index') }}">首页</a>><a href="{{ url_for('web.about') }}">随想</a></h3>
+        <div class="blogs">
+          <h3>{{ web_blog1.title }}</h3>
+          <ul>
+            <p>{{ web_blog1.bcontent }}</p>
+          </ul>
+          <div class="dateview">{{ web_blog1.creste_date }}</div>
+        </div>
+    </div>
+  </article>
+  <aside>
+    <div class="avatar"><a href="about.html"><span>关于何松</span></a></div>
+    <div class="topspaceinfo">
+      <h1>执子之手，与子偕老</h1>
+      <p>于千万人之中，遇见我钟情之人....</p>
+    </div>
+    <div class="about_c">
+      <p></p>
+      <p></p>
+    </div>
+   <div class="tj_news">
+      <h2>
+        <p class="tj_t1">最新文章</p>
+      </h2>
+      {% for i in webblogs %}
+        <ul>
+          <li><a href="{{ url_for('web.content',id=i.id) }}">{{ i.title }}</a></li>
+        </ul>
+      {% endfor %}
+    </div>
+    <div class="tj_news">
+      <h2>
+        <p class="tj_t2">博客分类</p>
+      </h2>
+
+      {% for i in webblogs %}
+        <ul>
+          <li><a href="{{ url_for('web.content',id=i.id) }}">{{ i.b.f_name }}</a></li>
+        </ul>
+      {% endfor %}
+
+    </div>
+    <div class="links">
+      <h2>
+        <p>友情链接</p>
+      </h2>
+      <ul>
+        <li><a href="https://hehe670.github.io/">何松的博客</a></li>
+      </ul>
+    </div>
+
+  </aside>
+  <script src="/static/web/js/silder.js"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 -->
+</div>
+</body>
+</html>

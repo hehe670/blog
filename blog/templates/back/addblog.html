@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>
+         
+    </title> 
+    <link rel="stylesheet" type="text/css" href="/static/back/css/style.css">
+    <script src="/static/back/js/jquery.js"></script>
+    <script src="/static/back/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    
+    <script type="text/javascript" src="/static/kindeditor/kindeditor-all.js"></script>
+    <script type="text/javascript" src="/static/kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript">
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+    </script>
+
+</head>
+<body>
+
+
+<header>
+    <h1><img src="/static/backweb/images/admin_logo.png"/></h1>
+    <ul class="rt_nav">
+        <li><a href="/" target="_blank" class="website_icon">站点首页</a></li>
+        <li><a href="#" class="set_icon">账号设置</a></li>
+        <li><a href="login.html" class="quit_icon">安全退出</a></li>
+    </ul>
+</header>
+
+
+
+
+    <aside class="lt_aside_nav content mCustomScrollbar">
+        <h2><a href="/home/index/">博客后台</a></h2>
+        <ul>
+            <li>
+                <dl>
+                    <dt>博客管理</dt>
+                    <!--当前链接则添加class:active-->
+                    <dd><a href="{{ url_for('back.a_type')}}">博客分类</a></dd>
+                    <dd><a href="{{ url_for('back.article_list')}}">博客列表</a></dd>
+                </dl>
+            </li>
+            <li>    
+                <dl>
+                    <dt>用户管理</dt>
+                    <dd><a href="user_list.html">用户列表</a></dd>
+                </dl>
+            </li>
+            </ul>
+    </aside>
+
+    <style>
+    .dataStatistic{width:400px;height:200px;border:1px solid #ccc;margin:0 auto;margin:10px;overflow:hidden}
+    #cylindrical{width:400px;height:200px;margin-top:-15px}
+    #line{width:400px;height:200px;margin-top:-15px}
+    #pie{width:400px;height:200px;margin-top:-15px}
+    </style>
+
+
+
+<section class="rt_wrap mCustomScrollbar">
+
+    <div class="rt_content">
+        <div class="page_title">
+            <h2 class="fl">博客详情</h2>
+            <a class="fr top_rt_btn" href="{{ url_for('back.article_list')}}">返回博客列表</a>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ cw }}
+            <input type='hidden' name='csrfmiddlewaretoken' value='q3tTrBuDcMhfvSS9x2u0yQAyRbboSQuyMyt42kgwgKS0rKxCv31hIWTsS3ULhZn7' />
+            <section>
+                <ul class="ulColumn2">
+
+                    <li>
+                        <span class="item_name" style="width:120px;">博客标题：</span>
+                        <input type="text" name="name" class="textbox textbox_295" placeholder=""/>
+                        
+                    </li>
+                    <li>
+                        <span class="item_name" style="width:120px;">博客描述：</span>
+                        <input type="text" name="goods_sn"  class="textbox" placeholder=""/>
+                        
+                    </li>
+                    <li>
+                        <span class="item_name" style="width:120px;">分类：</span>
+                        <select class="select" name="category">
+
+                            {% for i in a_type2 %}
+                                <option value="{{ i.id }}">{{ i.f_name }}</option>
+                            {% endfor %}
+
+                        </select>
+                        
+                    </li>
+                    <li>
+                        <span class="item_name" style="width:120px;">博客内容：</span>
+
+                        <textarea style="witch:600px;height:300px" name="goods_brief" rows="" cols="" class="textbox textbox_295"></textarea>
+                        
+                    </li>
+
+                    <!--<li>-->
+                        <!--<span class="item_name" style="width:120px;">产品详情：</span>-->
+
+                        <!--<textarea id="editor_id" name="content" style="width:700px;height:300px;">-->
+                            <!--&lt;strong&gt;HTML内容&lt;/strong&gt;-->
+                        <!--</textarea>-->
+                    <!--</li>-->
+                    <li>
+                        <span class="item_name" style="width:120px;"></span>
+                        <input type="submit" class="link_btn"/>
+                    </li>
+                </ul>
+            </section>
+        </form>
+    </div>
+</section>
+
+
+
+</body>
+</html>

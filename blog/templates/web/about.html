@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小爱即安</title>
+<meta name="keywords" content="个人博客模板,博客模板,响应式" />
+<meta name="description" content="如影随形主题的个人博客模板，神秘、俏皮。" />
+<link href="/static/web/css/base.css" rel="stylesheet">
+<link href="/static/web/css/about.css" rel="stylesheet">
+<link href="/static/web/css/media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if lt IE 9]>
+<script src="/static/web/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="ibody">
+  <header>
+    <h1>小爱即安</h1>
+    <h2>生命在于爱，大爱是视苍生如一，我本凡人，小爱即安。</h2>
+    <div class="logo"><a href="{{ url_for('web.index') }}"></a></div>
+    <nav id="topnav"><a href="{{ url_for('web.index') }}">首页</a><a href="{{ url_for('web.about') }}">随想</a></nav>
+  </header>
+  <article>
+    <h3 class="about_h">您现在的位置是：<a href="{{ url_for('web.index') }}">首页</a>><a href="{{ url_for('web.about') }}">随想</a></h3>
+    <div class="about">
+      <h2>世界总是比你的梦想大</h2>
+      <ul>
+        <p>世界那么多美好，都随着时光正慢慢消逝。</p>
+        <p>勇敢地迈出那一步，在风景消失之前，再看一眼。</p>
+        <p>途中或许只有乱石杂草，不要沮丧，不要停止脚步，风景就在下一个转角。</p>
+
+      </ul>
+      <h2>世界总是比你的梦想大</h2>
+    </div>
+  </article>
+  <aside>
+    <div class="avatar"><a href="about.html"><span></span></a></div>
+    <div class="topspaceinfo">
+      <h1>执子之手，与子偕老</h1>
+      <p>于千万人之中，我遇见了我所遇见的人....</p>
+    </div>
+  </aside>
+  <script src="/static/web/js/silder.js"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+</body>
+</html>
